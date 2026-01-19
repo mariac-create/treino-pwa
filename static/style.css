@@ -72,24 +72,18 @@ header p {
     position: absolute;
     top: 18px;
     right: 18px;
-    background: #111;
+    background: transparent;
     border: 1px solid var(--border);
     color: var(--text-main);
-    padding: 10px 14px;
+    padding: 8px 12px;
     border-radius: 999px;
     cursor: pointer;
-    transition: 0.3s;
-}
-
-.theme-btn:hover {
-    background: var(--accent);
-    color: #000;
 }
 
 /* =======================
    MAIN
 ======================= */
-main.container {
+.container {
     max-width: 900px;
     margin: 32px auto;
     padding: 0 16px;
@@ -129,13 +123,14 @@ main.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
 }
 
 .exercise-name {
     font-weight: 600;
 }
 
-/* BOTÃO VÍDEO (DESKTOP INTACTO) */
+/* BOTÃO VÍDEO */
 .video-btn {
     padding: 6px 14px;
     border-radius: 999px;
@@ -143,36 +138,16 @@ main.container {
     color: var(--accent);
     font-size: 0.8rem;
     text-decoration: none;
-    transition: 0.3s;
-}
-
-.video-btn:hover {
-    background: var(--accent);
-    color: #000;
 }
 
 /* =======================
-   SÉRIES
+   SÉRIES (DESKTOP)
 ======================= */
-.series-control {
-    margin: 14px 0;
-    text-align: center;
-}
-
-.series-control input {
-    width: 80px;
-    padding: 8px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text-main);
-    text-align: center;
-}
-
 .series-container {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: 14px;
 }
 
 .series-row {
@@ -198,33 +173,75 @@ main.container {
 }
 
 /* =======================
-   MOBILE – AJUSTES FINOS
+   MENU MOBILE
+======================= */
+.mobile-menu {
+    display: none;
+}
+
+/* =======================
+   MOBILE (AJUSTADO)
 ======================= */
 @media (max-width: 600px) {
 
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
+    /* MENU TREINOS */
+    .mobile-menu {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px;
+        background: var(--bg-header);
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        z-index: 20;
+    }
+
+    .mobile-menu button {
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--text-main);
+        padding: 6px 10px;
+        border-radius: 10px;
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
+
+    .mobile-menu button.active {
+        background: var(--accent);
+        color: #000;
+        border-color: var(--accent);
+    }
+
+    /* ESCONDE TREINOS */
+    .treino {
+        display: none;
+    }
+
+    .treino.active {
+        display: block;
+    }
+
+    /* EXERCÍCIO */
     .exercise-header {
         flex-direction: column;
-        gap: 6px;
         text-align: center;
     }
 
-    /* BOTÃO VÍDEO MOBILE – PEQUENO E BONITO */
     .video-btn {
-        font-size: 0.75rem;
-        padding: 6px 12px;
-        width: auto;
+        font-size: 0.7rem;
+        padding: 5px 10px;
     }
 
-    /* SÉRIES EM BLOCOS */
+    /* SÉRIES MOBILE – 2x2 */
     .series-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-        margin-top: 10px;
+        gap: 10px;
     }
 
     .series-row {
@@ -237,16 +254,8 @@ main.container {
         border: 1px solid var(--border);
     }
 
-    .series-row span {
-        font-size: 0.8rem;
-        font-weight: 600;
-        margin-bottom: 6px;
-    }
-
     .series-row input {
         width: 100%;
-        font-size: 0.9rem;
-        padding: 8px;
     }
 }
 
@@ -255,57 +264,9 @@ main.container {
 ======================= */
 footer {
     text-align: center;
-    padding: 18px;
+    padding: 16px;
     background: var(--bg-header);
     border-top: 1px solid var(--border);
     font-size: 0.85rem;
     color: var(--text-muted);
-}
-/* =========================
-   MENU MOBILE TREINOS
-========================= */
-.mobile-menu {
-    display: none;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-
-    .mobile-menu {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        padding: 12px;
-        background: var(--bg-header);
-        border-bottom: 1px solid var(--border);
-        position: sticky;
-        top: 0;
-        z-index: 20;
-    }
-
-    .mobile-menu button {
-        background: transparent;
-        border: 1px solid var(--border);
-        color: var(--text-main);
-        padding: 8px 12px;
-        border-radius: 10px;
-        font-size: 0.85rem;
-        cursor: pointer;
-    }
-
-    .mobile-menu button.active {
-        background: var(--accent);
-        color: #000;
-        border-color: var(--accent);
-    }
-
-    /* ESCONDE TODOS OS TREINOS */
-    .treino {
-        display: none;
-    }
-
-    /* MOSTRA O TREINO ATIVO */
-    .treino.active {
-        display: block;
-    }
 }
