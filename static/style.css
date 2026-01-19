@@ -1,0 +1,311 @@
+/* =======================
+   RESET
+======================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =======================
+   VARIÁVEIS
+======================= */
+:root {
+    --bg-main: #050505;
+    --bg-card: #0f0f0f;
+    --bg-header: #0b0b0b;
+
+    --text-main: #e5e5e5;
+    --text-muted: #9ca3af;
+
+    --accent: #1bd5ffb3;
+    --border: #1f2933;
+}
+
+body.light {
+    --bg-main: #f4f6f8;
+    --bg-card: #ffffff;
+    --bg-header: #ffffff;
+
+    --text-main: #111827;
+    --text-muted: #4b5563;
+
+    --accent: #09758eb3;
+    --border: #e5e7eb;
+}
+
+/* =======================
+   BODY
+======================= */
+body {
+    background: var(--bg-main);
+    color: var(--text-main);
+    min-height: 100vh;
+}
+
+/* =======================
+   HEADER
+======================= */
+header {
+    background: var(--bg-header);
+    padding: 28px 16px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+}
+
+header h1 {
+    color: var(--accent);
+    font-size: 2rem;
+}
+
+header p {
+    margin-top: 6px;
+    color: var(--text-muted);
+}
+
+/* =======================
+   BOTÃO TEMA
+======================= */
+.theme-btn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: #111;
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 10px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.theme-btn:hover {
+    background: var(--accent);
+    color: #000;
+}
+
+/* =======================
+   MAIN
+======================= */
+main.container {
+    max-width: 900px;
+    margin: 32px auto;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* =======================
+   CARD
+======================= */
+.card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 22px;
+    border: 1px solid var(--border);
+}
+
+.card h2 {
+    color: var(--accent);
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+/* =======================
+   EXERCÍCIO
+======================= */
+.exercise {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 14px;
+}
+
+.exercise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.exercise-name {
+    font-weight: 600;
+}
+
+/* BOTÃO VÍDEO (DESKTOP INTACTO) */
+.video-btn {
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.video-btn:hover {
+    background: var(--accent);
+    color: #000;
+}
+
+/* =======================
+   SÉRIES
+======================= */
+.series-control {
+    margin: 14px 0;
+    text-align: center;
+}
+
+.series-control input {
+    width: 80px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-main);
+    text-align: center;
+}
+
+.series-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.series-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.series-row span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.series-row input {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-main);
+    text-align: center;
+}
+
+/* =======================
+   MOBILE – AJUSTES FINOS
+======================= */
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .exercise-header {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+
+    /* BOTÃO VÍDEO MOBILE – PEQUENO E BONITO */
+    .video-btn {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+        width: auto;
+    }
+
+    /* SÉRIES EM BLOCOS */
+    .series-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .series-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        border-radius: 12px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid var(--border);
+    }
+
+    .series-row span {
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+
+    .series-row input {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+
+/* =======================
+   FOOTER
+======================= */
+footer {
+    text-align: center;
+    padding: 18px;
+    background: var(--bg-header);
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+/* =========================
+   MENU MOBILE TREINOS
+========================= */
+.mobile-menu {
+    display: none;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    .mobile-menu {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px;
+        background: var(--bg-header);
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        z-index: 20;
+    }
+
+    .mobile-menu button {
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--text-main);
+        padding: 8px 12px;
+        border-radius: 10px;
+        font-size: 0.85rem;
+        cursor: pointer;
+    }
+
+    .mobile-menu button.active {
+        background: var(--accent);
+        color: #000;
+        border-color: var(--accent);
+    }
+
+    /* ESCONDE TODOS OS TREINOS */
+    .treino {
+        display: none;
+    }
+
+    /* MOSTRA O TREINO ATIVO */
+    .treino.active {
+        display: block;
+    }
+}
